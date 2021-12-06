@@ -1,0 +1,49 @@
+name: dotnet package
+
+on: [push]
+
+jobs:
+  build:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        dotnet-version: ['6.0.x' ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Start containers
+        working-directory: ./docker/
+        run: docker-compose -f "docker-compose.yml" up -d --build
+      
+      - name: Install mssql tools 
+        run: sudo apt-get install mssql-tools
+
+      - name: Install mssql tools path 
+        run: echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+
+      - name: Create Database
+        run: sqlcmd -s localhost -u sa -p 1qaz@WSX -i create_db.sql
+
+      - name: Create table
+        working-directory: ./sql/
+        run: sqlcmd -s localhost -u sa -p 1qaz@WSX -d testDB -i create_table.sql
+        
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Install dependencies
+        run: dotnet restore github-action-container-example
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore github-action-container-example
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal github-action-container-example
+
+      - name: Stop containers
+        working-directory: ./docker/
+        if: always()
+        run: docker-compose -f "docker-compose.yml" down

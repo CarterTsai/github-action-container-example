@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "github-action-container-example", "github-action-container-example\github-action-container-example.csproj", "{EF647BA3-1805-4A42-9B28-E9979186CB37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testing", "testing\testing.csproj", "{2291DDA6-85A1-41CE-ADA7-41A9D469CE1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "infrastructure\infrastructure.csproj", "{B135C591-E1D4-4D98-88C2-B65A9977C631}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF647BA3-1805-4A42-9B28-E9979186CB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF647BA3-1805-4A42-9B28-E9979186CB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF647BA3-1805-4A42-9B28-E9979186CB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF647BA3-1805-4A42-9B28-E9979186CB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2291DDA6-85A1-41CE-ADA7-41A9D469CE1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2291DDA6-85A1-41CE-ADA7-41A9D469CE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2291DDA6-85A1-41CE-ADA7-41A9D469CE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2291DDA6-85A1-41CE-ADA7-41A9D469CE1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B135C591-E1D4-4D98-88C2-B65A9977C631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B135C591-E1D4-4D98-88C2-B65A9977C631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B135C591-E1D4-4D98-88C2-B65A9977C631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B135C591-E1D4-4D98-88C2-B65A9977C631}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  MSSQL2019Test:
+    image: mcr.microsoft.com/mssql/server:latest
+    restart: always
+    container_name: MSSQL2019Test
+    ports:
+      - 1432:1433
+    volumes:
+      - db-test:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1qaz@WSX
+      - MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS
+    networks:
+      - db
+
+volumes:
+  db-test:
+
+networks:
+  db:
