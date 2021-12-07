@@ -6,7 +6,7 @@ services:
     restart: always
     container_name: MSSQL2019Test
     ports:
-      - 1432:1433
+      - 1433:1433
     volumes:
       - db-test:/var/opt/mssql
     environment:
