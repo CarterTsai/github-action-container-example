@@ -24,11 +24,11 @@ jobs:
         run: echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 
       - name: Create Database
-        run: sqlcmd -s localhost -u sa -p 1qaz@WSX -i create_db.sql
+        run: sqlcmd -S localhost -U sa -P 1qaz@WSX -i create_db.sql
 
       - name: Create table
         working-directory: ./sql/
-        run: sqlcmd -s localhost -u sa -p 1qaz@WSX -d testDB -i create_table.sql
+        run: sqlcmd -S localhost -U sa -P 1qaz@WSX -d testDB -i create_table.sql
         
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v1.7.2
