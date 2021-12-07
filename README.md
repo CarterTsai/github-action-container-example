@@ -1,5 +1,8 @@
 ### Github Action Docker DB Example
 
+>>> 此範例主要是目的是Push Code到Github的時候可以在Github Action會建立測試用的DB來做專案的Unit Test。
+
+
 ### Update DBContext
 ```
 $> cd ./infrastructure
