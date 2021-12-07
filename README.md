@@ -1,7 +1,7 @@
 ### Github Action Docker DB Example
 
 >>> 此範例主要是目的是Push Code到Github的時候可以在Github Action會建立測試用的DB來做專案的Unit Test。
-
+>>> 更多說明 https://hamisme.blogspot.com/2021/12/githubaction-github-action.html
 
 ### Create docker-compose.yaml
 此專案的範例是使用MSSQL2019
